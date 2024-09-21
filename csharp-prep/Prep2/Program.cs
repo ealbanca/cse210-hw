@@ -5,35 +5,35 @@ class Program
     static void Main(string[] args)
     {
         Console.Write("What is your grade percentage? ");
-        string gradePercentage= Console.ReadLine();
+        string gradePercentage = Console.ReadLine();
         int percent = int.Parse(gradePercentage);
 
-        string letter ="";
+        string letter = "";
 
-        if (percent >=90)
+        if (percent >= 90)
         {
-            letter= "A";
+            letter = "A";
         }
-        else if (percent >=80)
+        else if (percent >= 80)
         {
-            letter= "B";
+            letter = "B";
         }
-        else if (percent >=70)
+        else if (percent >= 70)
         {
-            letter= "C";
+            letter = "C";
         }
-        else if(percent >=60)
+        else if (percent >= 60)
         {
-            letter= "D";
+            letter = "D";
         }
         else
         {
-            letter= "F";
+            letter = "F";
         }
 
         Console.WriteLine($"Your Grade is: {letter}");
 
-        if (percent>= 70)
+        if (percent >= 70)
         {
             Console.WriteLine("You Passed");
         }
