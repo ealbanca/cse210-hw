@@ -4,7 +4,7 @@ public class Journal
 {
     public List<Entry> _entries;
 
-    public void AddEntry(Entry newEntry)
+    /*public void AddEntry(Entry newEntry)
     {
         Console.Write(newEntry._promptText + " ");
         newEntry._entryText = Console.ReadLine();
@@ -12,7 +12,7 @@ public class Journal
         _entries.Add(new Entry(newEntry._date, newEntry._promptText, newEntry._entryText));
     }
 
-    /*Display entries*/
+    /*Display entries
     public void DisplayAll()
     {
         foreach (Entry entry in _entries)
@@ -21,7 +21,7 @@ public class Journal
         }
     }
 
-    /*Save Entry to a File*/
+    /*Save Entry to a File
     public void SaveToFile(string file)
     {
         Console.Write("What is the filename? ");
@@ -38,7 +38,7 @@ public class Journal
         Console.WriteLine("Your entries were saved");
     }
 
-    /*Load Entry from Exisiting saved File*/
+    /*Load Entry from Exisiting saved File
     public void LoadFromFile(string file)
     {
         Console.Write("What is the filename? ");
@@ -62,5 +62,5 @@ public class Journal
             }
         }
         Console.WriteLine("File Loaded");
-    }
+    }*/
 }
