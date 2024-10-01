@@ -4,8 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Journal _theJournal = new Journal();
-        PromptGenerator thePrompt = new PromptGenerator();
+        Journal theJournal = new Journal();
+        Entry theEntry = new Entry();
 
 
         bool quit = false;
@@ -24,23 +24,21 @@ class Program
 
             if (choice == "1")
             {
-                string newPrompt = thePrompt.GetRandomPrompt(thePrompt._prompts);
-                Console.WriteLine($"{newPrompt}");
+                theJournal.AddEntry(theEntry);
             }
             else if (choice == "2")
             {
-                /*thejournal.DisplayAll();*/
-                Console.WriteLine("test2");
+                theJournal.DisplayAll();
             }
             else if (choice == "3")
             {
-                /*thejournal.LoadFromFile();*/
-                Console.WriteLine("test3");
+                theJournal.LoadFromFile();
             }
+            
             else if (choice == "4")
             {
-                /*thejournal.SaveToFile();*/
-                Console.WriteLine("test4");
+                theJournal.SaveToFile();
+
             }
             else if (choice == "5")
             {
