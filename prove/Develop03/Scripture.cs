@@ -1,4 +1,4 @@
-using System;
+/*using System;
 public class Scripture
 {
 
@@ -26,4 +26,4 @@ public class Scripture
 
     }
 
-}
+}*/
