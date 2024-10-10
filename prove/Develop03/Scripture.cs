@@ -1,4 +1,4 @@
-/*using System;
+using System;
 public class Scripture
 {
 
@@ -7,6 +7,8 @@ public class Scripture
 
     public Scripture(Reference Reference, string text)
     {
+        _reference = Reference;
+        _words =
     }
 
     public void HideRandomWords(int numberToHide)
@@ -24,4 +26,4 @@ public class Scripture
 
     }
 
-}*/
+}
