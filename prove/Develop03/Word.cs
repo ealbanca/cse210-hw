@@ -1,5 +1,4 @@
-using System.IO.Pipes;
-using System.Runtime.CompilerServices;
+/*using System;
 
 public class Word
 {
@@ -8,7 +7,8 @@ public class Word
 
     public Word(string text)
     {
-
+        _text = text;
+        _isHidden=false;
     }
 
     public void Hide()
@@ -31,4 +31,4 @@ public class Word
 
     }
 
-}
+}*/
