@@ -8,26 +8,36 @@ public class Word
     public Word(string text)
     {
         _text = text;
-        _isHidden = true;
+        _isHidden = false;
     }
 
     public void Hide()
     {
-
+        _isHidden = true;
     }
 
     public void Show()
     {
-
+        //Console.Write(_text);
+        _isHidden = false;
     }
 
     public bool IsHidden()
     {
-        _isHidden = false;
+        return _isHidden;
     }
 
     public string GetDisplayText()
     {
+        if (IsHidden)
+        {
+
+            return "______";
+        }
+        else
+        {
+            return _text;
+        }
 
     }
 

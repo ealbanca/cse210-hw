@@ -26,7 +26,10 @@ public class Reference
         {
             return $"{_book} {_chapter}:{_verse}";
         }
-        return $"{_book} {_chapter}:{_verse}-{_endVerse}";
+        else
+        {
+            return $"{_book} {_chapter}:{_verse}-{_endVerse}";
+        }
     }
 }
 
