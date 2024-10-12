@@ -18,7 +18,6 @@ class Program
         {
 
 
-
             string input = Console.ReadLine().ToLower();
 
             if (input == "quit")
