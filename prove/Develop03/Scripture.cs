@@ -13,7 +13,18 @@ public class Scripture
 
     public void HideRandomWords(int numberToHide)
     {
+        Random random = new Random();
+        int numbersHidden = 0;
 
+        while (numbersHidden < numberToHide)
+        {
+            int randomIndex = random.Next(0, _words.Count);
+            if (!_words[randomIndex].IsHidden())
+            {
+                _words[randomIndex].Hide();
+                numbersHidden++;
+            }
+        }
     }
 
     public string GetDisplayText()
