@@ -9,14 +9,15 @@ class Program
         "6 And whatsoever thing is good is just and true; wherefore, nothing that is good denieth the Christ, but acknowledgeth that he is.");
 
 
-        Console.WriteLine(scr1.GetDisplayText());
-        //Console.WriteLine(ref1.GetDisplayText());
 
-        Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
 
-        while (scr1.IsCompletelyHidden())
+        while (!scr1.IsCompletelyHidden())
         {
+            Console.Clear();
+            Console.WriteLine(scr1.GetDisplayText());
+            //Console.WriteLine(ref1.GetDisplayText());
 
+            Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
 
             string input = Console.ReadLine().ToLower();
 
@@ -26,7 +27,7 @@ class Program
             }
             else if (input == "")
             {
-                scr1.HideRandomWords(1);
+                scr1.HideRandomWords(3);
             }
         }
 

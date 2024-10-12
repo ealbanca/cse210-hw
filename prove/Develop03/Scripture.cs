@@ -10,6 +10,13 @@ public class Scripture
     {
         _reference = Reference;
         _words = new List<Word>();
+        // Need to split the scripture, so each word will be an element of the list
+        string[] wordsArray = text.Split(' ');
+
+        foreach (string wordText in wordsArray)
+        {
+            _words.Add(new Word(wordText));
+        }
     }
 
     public void HideRandomWords(int numberToHide)
