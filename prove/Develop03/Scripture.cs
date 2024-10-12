@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 public class Scripture
 {
 
@@ -29,12 +30,25 @@ public class Scripture
 
     public string GetDisplayText()
     {
+        string scriptureText = _reference.GetDisplayText() + "\n";
 
+        foreach (Word word in _words)
+        {
+            scriptureText += word.GetDisplayText() + " ";
+        }
+        return scriptureText.Trim();
     }
 
     public bool IsCompletelyHidden()
     {
-
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
