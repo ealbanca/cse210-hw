@@ -15,7 +15,8 @@ class Program
         {
             new Comment("Peter", "Hi , i made this for my school project. My family and friends loved it so much."),
             new Comment("Jenkinsoup", "Good video!"),
-            new Comment("sharifulislam6387", "hey, i have a breadboard smaller than that can i make one?")
+            new Comment("sharifulislam6387", "hey, i have a breadboard smaller than that can i make one?"),
+            new Comment("Adriana", "I will be an influencer like you!")
         };
 
         List<Comment> com3 = new List<Comment>
@@ -23,6 +24,8 @@ class Program
             new Comment("Suseela.VSuseela", "If i use only 10 led it will work or not need any changes in code please reply sir"),
             new Comment("k.smadhubhashana5152", "dude how to get the setch"),
             new Comment("Lucas", "Sir my LED are working but it is very very low voltage didn't see  at cleared in the code need to give little more voltage what can I do"),
+            new Comment("David", "Thanks a lot!"),
+            new Comment("Angela", "I learned a lot with your videos!")
         };
 
 
@@ -41,7 +44,18 @@ class Program
             Console.WriteLine($"Duration: {video.GetDuration()}");
             Console.WriteLine($"Comments ammount: {video.GetCommentsCount()}");
 
+            foreach (Comment comment in video.GetComments())
+            {
+                Console.WriteLine($"{comment.GetName()} - {comment.GetText()}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
         }
+
+
 
 
 
