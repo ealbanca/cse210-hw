@@ -21,6 +21,7 @@ namespace Develop05
         {
             Console.WriteLine($"Welcome to the {_name}.");
             Console.WriteLine($"{_description}");
+            Console.WriteLine("Get ready...");
             ShowCountDown(3);
 
         }

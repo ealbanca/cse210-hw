@@ -8,7 +8,13 @@ namespace Develop05
     {
 
         private int _count;
-        private List<string> _prompts;
+        private List<string> _prompts = new List<string>
+        {
+            "What is the most important thing on your life?",
+            "What is a good motivator in your life and why?",
+            "What helps you to remember that you are a child of God?",
+            "THink about a spiritual experince that has changed your life"
+        };
 
         public ListingActivity(string name, string description, int duration, int count) : base(name, description, duration)
         {
