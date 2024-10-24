@@ -24,17 +24,26 @@ namespace Develop05
 
         public void Run()
         {
+            DisplayStartingMessage();
+            Random random = new Random();
+            Console.WriteLine(_prompts[random.Next(_prompts.Count)]);
 
+            List<string> userEntries = new List<string>();
+            Console.WriteLine("Start listing items (press Enter after each one, type 'end' to finish early):");
+
+            for (int i = 0; i < _duration / 10; i++)
+            {
+                string entry = Console.ReadLine();
+                if (entry.ToLower() == "end") break;
+                userEntries.Add(entry);
+            }
+
+            Console.WriteLine($"You listed {userEntries.Count} items.");
+            DisplayEndingMessage();
+            ShowSpinner(5);
         }
 
-        public void GetRandomPrompt()
-        {
-
-        }
-
+        //public void GetRandomPrompt()
         //public List<string> GetListFromUser()
-        // {
-
-        // }
     }
 }
