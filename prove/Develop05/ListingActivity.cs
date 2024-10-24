@@ -15,5 +15,20 @@ namespace Develop05
             _count = count;
             _prompts = new List<string>();
         }
+
+        public void Run()
+        {
+
+        }
+
+        public void GetRandomPrompt()
+        {
+
+        }
+
+        public List<string> GetListFromUser()
+        {
+
+        }
     }
 }
