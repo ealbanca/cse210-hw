@@ -28,7 +28,7 @@ namespace Develop05
         public void DisplayEndingMessage()
         {
             Console.WriteLine("Well Done!!");
-            Console.WriteLine($"You have completed another{_duration}seconds of the {_name}");
+            Console.WriteLine($"You have completed another {_duration} seconds of the {_name}");
             ShowSpinner(3);
         }
 
