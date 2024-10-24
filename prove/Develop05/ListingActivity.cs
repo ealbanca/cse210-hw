@@ -26,9 +26,9 @@ namespace Develop05
 
         }
 
-        public List<string> GetListFromUser()
-        {
+        //public List<string> GetListFromUser()
+        // {
 
-        }
+        // }
     }
 }
