@@ -58,5 +58,6 @@ namespace Develop05
             }
             Console.WriteLine(" ");
         }
+        public abstract void Run();
     }
 }

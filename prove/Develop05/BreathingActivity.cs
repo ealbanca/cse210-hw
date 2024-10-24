@@ -8,7 +8,7 @@ namespace Develop05
         {
 
         }
-        public void Run()
+        public override void Run()
         {
             DisplayStartingMessage();
             for (int i = 0; i < _duration / 6; i++)

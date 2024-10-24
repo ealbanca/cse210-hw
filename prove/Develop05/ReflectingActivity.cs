@@ -24,10 +24,9 @@ public class ReflectingActivity : Activity
 
     public ReflectingActivity(string name, string description, int duration) : base("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strenght  and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life. ", duration)
     {
-
     }
 
-    public void Run()
+    public override void Run()
     {
         DisplayStartingMessage();
         Random random = new Random();

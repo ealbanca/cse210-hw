@@ -16,13 +16,12 @@ namespace Develop05
             "THink about a spiritual experince that has changed your life"
         };
 
-        public ListingActivity(string name, string description, int duration, int count) : base(name, description, duration)
+        public ListingActivity(string name, string description, int duration) : base(name, description, duration)
         {
-            _count = count;
             _prompts = new List<string>();
         }
 
-        public void Run()
+        public override void Run()
         {
             DisplayStartingMessage();
             Random random = new Random();
