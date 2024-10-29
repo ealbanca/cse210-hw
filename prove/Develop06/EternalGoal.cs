@@ -2,23 +2,23 @@ using System;
 
 public class EternalGoal : Goal
 {
-    public EternalGoal(string name, string description, string points) : base("", "", "")
+    public EternalGoal(string name, string description, int points) : base(name, description, points)
     {
 
     }
 
-    public void RecordEvent()
+    public override void RecordEvent()
     {
-
+        Console.WriteLine($"The goal '{_shortName}' has been recorded. {_points} earned.");
     }
 
-    public bool isComplete()
+    public override bool IsComplete()
     {
-
+        return false;
     }
 
-    public string GetStringRepresentation()
+    public override string GetStringRepresentation()
     {
-
+        return $"EternalGoal: {_shortName}, {_description}, {_points}";
     }
 }

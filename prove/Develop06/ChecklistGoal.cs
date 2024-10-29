@@ -7,29 +7,29 @@ public class ChecklistGoal : Goal
     private int _target;
     private int _bonus;
 
-    public ChecklistGoal(string name, string description, string points, int target, int bonus) : base("", "", "")
+    public ChecklistGoal(string name, string description, int points, int target, int bonus) : base(name, description, points)
     {
         _amountCompleted = 0;
         _target = target;
         _bonus = bonus;
     }
 
-    public void RecordEvent()
+    public override void RecordEvent()
     {
 
     }
 
-    public bool isComplete()
+    public override bool isComplete()
     {
 
     }
 
-    public string GetDetailsString()
+    public override string GetDetailsString()
     {
 
     }
 
-    public string GetStringRepresentation()
+    public override string GetStringRepresentation()
     {
 
     }
