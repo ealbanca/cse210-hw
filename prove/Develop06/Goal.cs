@@ -49,7 +49,10 @@ public abstract class Goal
 
     public abstract bool IsComplete();
 
-    public abstract string GetDetailsString();
+    public string GetDetailsString()
+    {
+        return $"[{(IsComplete() ? "X" : " ")}] {_shortName}: {_description}";
+    }
 
     public abstract string GetStringRepresentation();
 
