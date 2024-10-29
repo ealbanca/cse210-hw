@@ -16,21 +16,32 @@ public class ChecklistGoal : Goal
 
     public override void RecordEvent()
     {
+        _amountCompleted++;
+        int pointsgained = _points;
 
+        if (_amountCompleted == _target)
+        {
+            pointsgained += _bonus;
+            Console.WriteLine($"The goal {_shortName} has been completed. Total points: {pointsgained}");
+        }
+        else
+        {
+            Console.WriteLine($"The goal {_shortName} has been recorded. Points gained: {pointsgained}");
+        }
     }
 
-    public override bool isComplete()
+    public override bool IsComplete()
     {
-
+        return _amountCompleted >= _target;
     }
 
     public override string GetDetailsString()
     {
-
+        return $"{base.GetDetailsString()} (Completed {_amountCompleted}/{_target})";
     }
 
     public override string GetStringRepresentation()
     {
-
+        return $"ChecklistGoal:{_shortName},{_description},{_points},{_amountCompleted},{_target},{_bonus}";
     }
 }
