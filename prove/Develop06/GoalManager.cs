@@ -13,7 +13,45 @@ public class GoalManager
 
     public void Start()
     {
+        Console.WriteLine("Menu Options");
+        string userInput;
+        do
+        {
+            Console.WriteLine("1. Create New Goal");
+            Console.WriteLine("2. List Goals");
+            Console.WriteLine("3. Save Goals");
+            Console.WriteLine("4. Load Goals");
+            Console.WriteLine("5. Record Event");
+            Console.WriteLine("6. Quit");
 
+            userInput = Console.ReadLine();
+
+
+            switch (userInput)
+            {
+                case "1":
+                    CreateGoal();
+                    break;
+                case "2":
+                    ListGoalDetails();
+                    break;
+                case "3":
+                    SaveGoals();
+                    break;
+                case "4":
+                    LoadGoals();
+                    break;
+                case "5":
+                    RecordEvent();
+                    break;
+                case "6":
+                    Console.WriteLine("Exiting program.");
+                    break;
+                default:
+                    Console.WriteLine("Invalid command. Please try again.");
+                    break;
+            }
+        } while (userInput != "6");
     }
 
     private void DisplayPlayerInfo()
@@ -85,17 +123,77 @@ public class GoalManager
 
     private void RecordEvent()
     {
+        ListGoalDetails();
+        Console.WriteLine("Enter the index of the goal to record an event for: ");
+        int index = int.Parse(Console.ReadLine());
 
+        if (index < 0 || index >= _goals.Count)
+        {
+            Console.WriteLine("Invalid goal index.");
+            return;
+        }
+
+        var goal = _goals[index];
+        goal.RecordEvent();
+
+        if (goal.IsComplete())
+        {
+            _score += goal.GetPoints(); // Points are added when completed.
+        }
     }
 
     private void SaveGoals()
     {
-
+        Console.Write("What is the filename? ");
+        string file = Console.ReadLine();
+        using (StreamWriter outputFile = new StreamWriter(file))
+        {
+            outputFile.WriteLine(_score);
+            foreach (var goal in _goals)
+            {
+                outputFile.WriteLine(goal.GetStringRepresentation());
+            }
+        }
+        Console.WriteLine("Goals have been saved successfully.");
     }
 
-    private void LoadGoals()
+    public void LoadGoals()
     {
 
+        Console.Write("What is the filename? ");
+        string file = Console.ReadLine();
+        _goals.Clear();
+        using (StreamReader reader = new StreamReader(file))
+        {
+            _score = int.Parse(reader.ReadLine());
+            _goals.Clear();
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                var parts = line.Split(':');
+                var goalType = parts[0];
+                var details = parts[1].Split(',');
+
+                Goal goal = null;
+                switch (goalType)
+                {
+                    case "SimpleGoal":
+                        goal = new SimpleGoal(details[0], details[1], int.Parse(details[2]));
+                        if (bool.Parse(details[3])) goal.RecordEvent();
+                        break;
+
+                    case "EternalGoal":
+                        goal = new EternalGoal(details[0], details[1], int.Parse(details[2]));
+                        break;
+                    case "ChecklistGoal":
+                        goal = new ChecklistGoal(details[0], details[1], int.Parse(details[2]), int.Parse(details[4]), int.Parse(details[5]));
+                        for (int i = 0; i < int.Parse(details[3]); i++) goal.RecordEvent();
+                        break;
+                }
+                _goals.Add(goal);
+            }
+        }
+        Console.WriteLine("Goals loaded successfully.");
     }
 
 }
