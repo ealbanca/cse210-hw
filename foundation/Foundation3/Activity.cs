@@ -3,8 +3,8 @@ using System;
 public abstract class Activity
 {
 
-    public DateTime _date;
-    public int _lenghtmin;
+    protected DateTime _date;
+    protected int _lenghtmin;
 
     public Activity(DateTime date, int lenghtmin)
     {
