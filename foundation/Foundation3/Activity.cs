@@ -4,12 +4,12 @@ public abstract class Activity
 {
 
     public DateTime _date;
-    public int _lenght;
+    public int _lenghtmin;
 
-    public Activity(DateTime date, int lenght)
+    public Activity(DateTime date, int lenghtmin)
     {
         _date = date;
-        _lenght = lenght;
+        _lenghtmin = lenghtmin;
     }
 
     public DateTime GetDate()
@@ -24,12 +24,12 @@ public abstract class Activity
 
     public int Getlenght()
     {
-        return _lenght;
+        return _lenghtmin;
     }
 
-    public void SetLenght(int lenght)
+    public void SetLenght(int lenghtmin)
     {
-        _lenght = lenght;
+        _lenghtmin = lenghtmin;
     }
 
     public abstract double GetDistance();
@@ -40,7 +40,7 @@ public abstract class Activity
 
     public virtual string GetSummary()
     {
-        return $"{_date.ToString("dd MMM yyyy")}: {this.GetType().Name} ({_lenght} min) - Distance: {GetDistance()} miles, Speed: {GetSpeed()} mph, Pace: {GetPace()} min per mile";
+        return $"{_date.ToString("dd MMM yyyy")} - {this.GetType().Name} ({_lenghtmin} min) - Distance: {GetDistance()} miles, Speed: {GetSpeed()} mph, Pace: {GetPace()} min per mile";
     }
 
 }
